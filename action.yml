@@ -1,0 +1,24 @@
+name: connect-remote-docker
+description: Allows connecting to docker daemon through the SSH jumphost.
+inputs:
+  ssh_public_key:
+    description: SSH public key of the server
+    required: false
+  ssh_private_key:
+    description: SSH private key to use to connect
+    required: false
+  ssh_user:
+    description: Remote server user
+    required: true
+  ssh_host:
+    description: Remote host
+    required: true
+  ssh_proxy_user:
+    description: Jump host user
+    required: true
+  ssh_proxy_hostname:
+    description: Jump host
+    required: true
+runs:
+  using: docker
+  image: Dockerfile

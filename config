@@ -1,0 +1,5 @@
+Host docker-server
+   User %user%
+   Hostname %hostname%
+   ProxyCommand ssh -q -W %h:%p -i ~/.ssh/docker %proxy_user%@%proxy_hostname% nc
+   IdentityFile ~/.ssh/docker
