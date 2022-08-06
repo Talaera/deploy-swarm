@@ -15,6 +15,9 @@ printf '%s %s\n' "$INPUT_SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known
 printf '%s %s\n' "$INPUT_SSH_PROXY_HOST" "$INPUT_SSH_PROXY_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
 
 # Put correct values into ssh config file
+
+# Couldn't figure how to copy config file straight to $HOME/.ssh/ folder during build stage, so here it is.
+cp /config $HOME/.ssh/config
 sed -i -e 's/%user%/'"$INPUT_SSH_USER"'/g' $HOME/.ssh/config
 sed -i -e 's/%hostname%/'"$INPUT_SSH_HOST"'/g' $HOME/.ssh/config
 sed -i -e 's/%proxy_user%/'"$INPUT_SSH_PROXY_USER"'/g' $HOME/.ssh/config
