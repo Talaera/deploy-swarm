@@ -9,6 +9,6 @@ RUN apk --no-cache add openssh-client
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
-COPY config /config
+COPY config /etc/ssh/ssh_config
 
 ENTRYPOINT ["/entrypoint.sh"]
