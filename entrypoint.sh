@@ -24,4 +24,5 @@ sed -i -e 's/%proxy_user%/'"$INPUT_SSH_PROXY_USER"'/g' $HOME/.ssh/config
 sed -i -e 's/%proxy_hostname%/'"$INPUT_SSH_PROXY_HOST"'/g' $HOME/.ssh/config
 
 echo "Connecting to $INPUT_SSH_HOST..."
+cat $HOME/.ssh/config
 docker --log-level debug --host "ssh://docker-server" "$@" 2>&1
