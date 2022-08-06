@@ -8,6 +8,7 @@ LABEL "com.github.actions.description"="Connect to the Docker daemon through SSH
 RUN apk --no-cache add openssh-client
 
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod 777 /entrypoint.sh
 COPY config ~/.ssh/config
 
 ENTRYPOINT ["/entrypoint.sh"]
