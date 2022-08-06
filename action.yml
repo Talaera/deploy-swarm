@@ -3,10 +3,13 @@ description: Allows connecting to docker daemon through the SSH jumphost.
 inputs:
   ssh_public_key:
     description: SSH public key of the server
-    required: false
+    required: true
+  ssh_proxy_public_key:
+    description: SSH public key of the jump host
+    required: true
   ssh_private_key:
     description: SSH private key to use to connect
-    required: false
+    required: true
   ssh_user:
     description: Remote server user
     required: true
@@ -16,7 +19,7 @@ inputs:
   ssh_proxy_user:
     description: Jump host user
     required: true
-  ssh_proxy_hostname:
+  ssh_proxy_host:
     description: Jump host
     required: true
 runs:
