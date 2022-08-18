@@ -5,7 +5,7 @@ echo "Registering SSH keys..."
 
 # Save private key to a file and register it with the agent.
 mkdir -p "$HOME/.ssh"
-printf '%s' "$INPUT_SSH_PRIVATE_KEY" > "$HOME/.ssh/docker.pem"
+echo "$INPUT_SSH_PRIVATE_KEY" > "$HOME/.ssh/docker.pem"
 chmod 600 "$HOME/.ssh/docker.pem"
 eval $(ssh-agent)
 ssh-add "$HOME/.ssh/docker.pem"
