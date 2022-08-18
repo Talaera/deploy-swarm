@@ -24,6 +24,8 @@ sed -i -e 's|%identity_file%|'"$HOME"'/.ssh/docker.pem|g' /etc/ssh/ssh_config
 echo "Print config"
 cat /etc/ssh/ssh_config
 
+echo "Version 2.0"
+
 echo "Connecting to $INPUT_SSH_HOST..."
 # docker --log-level debug --host "ssh://docker-server" "$@" 2>&1
 sleep 20
