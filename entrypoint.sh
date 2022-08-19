@@ -22,4 +22,5 @@ sed -i -e 's/%proxy_hostname%/'"$INPUT_SSH_PROXY_HOST"'/g' /etc/ssh/ssh_config
 sed -i -e 's|%identity_file%|'"$HOME"'/.ssh/docker.pem|g' /etc/ssh/ssh_config
 
 echo "Connecting to $INPUT_SSH_HOST..."
+echo "Docker version $(docker --version)"
 docker --log-level debug --host "ssh://docker-server" "$@" 2>&1
