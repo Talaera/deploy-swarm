@@ -22,8 +22,14 @@ inputs:
   ssh_proxy_host:
     description: Jump host
     required: true
-  repo_credentials:
-    description: Docker repo credentials
+  repo:
+    description: Docker repository containing images
+    required: true
+  repo_username:
+    description: Docker repository username
+    required: true
+  repo_pass:
+    description: Docker repo pass
     required: true
 runs:
   using: docker

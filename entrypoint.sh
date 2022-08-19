@@ -22,8 +22,8 @@ sed -i -e 's/%proxy_hostname%/'"$INPUT_SSH_PROXY_HOST"'/g' /etc/ssh/ssh_config
 sed -i -e 's|%identity_file%|'"$HOME"'/.ssh/docker.pem|g' /etc/ssh/ssh_config
 
 echo "Setting up credentials..."
-mkdir $HOME/.docker
-echo "$INPUT_REPO_CREDENTIALS" > $HOME/.docker/config.json
+
+docker login -u $INPUT_REPO_USERNAME -p $INPUT_REPO_PASS $INPUT_REPO
 
 echo "Connecting to $INPUT_SSH_HOST..."
 docker --log-level debug --host "ssh://docker-server" "$@" 2>&1
