@@ -25,8 +25,5 @@ echo "Setting up credentials..."
 mkdir $HOME/.docker
 echo "$INPUT_REPO_CREDENTIALS" > $HOME/.docker/config.json
 
-systemctl stop docker
-systemctl start docker
-
 echo "Connecting to $INPUT_SSH_HOST..."
 docker --log-level debug --host "ssh://docker-server" "$@" 2>&1
