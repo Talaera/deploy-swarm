@@ -1,4 +1,4 @@
-FROM docker:20.10.17
+FROM docker:28.0.1
 
 LABEL "name"="Docker Connect Through SSH JumpHost."
 
