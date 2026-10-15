@@ -3,3 +3,9 @@ Host docker-server
    Hostname %hostname%
    ProxyCommand ssh -q -W %h:%p -i %identity_file% %proxy_user%@%proxy_hostname% nc
    IdentityFile %identity_file%
+
+# A migration can run for minutes without output; keepalives stop the jump host
+# and the network in between from dropping the idle connection mid-command.
+Host *
+   ServerAliveInterval 30
+   ServerAliveCountMax 6
